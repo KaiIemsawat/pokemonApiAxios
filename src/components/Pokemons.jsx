@@ -23,9 +23,6 @@ export default function Pokemons(props) {
                     value={number}
                 />
             </form>
-            {/* {pokeList.map((pokeRes, index) => (
-                <p key={index}>{`Number : ${index + 1} - ${pokeRes.name}`}</p>
-            ))} */}
         </div>
     );
 }
