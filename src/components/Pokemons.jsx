@@ -5,11 +5,6 @@ export default function Pokemons(props) {
     const { pokeList, setPokeList } = props;
     const [number, setNumber] = useState(5);
 
-    const handleNumber = (e) => {
-        e.perventDefault();
-        setNumber(5);
-    };
-
     useEffect(() => {
         axios
             .get(`https://pokeapi.co/api/v2/pokemon?limit=${number}`)
@@ -20,7 +15,7 @@ export default function Pokemons(props) {
 
     return (
         <div>
-            <form onSubmit={(e) => handleNumber(e)}>
+            <form>
                 <label>Number of Pokemons in display : </label>
                 <input
                     type="number"
