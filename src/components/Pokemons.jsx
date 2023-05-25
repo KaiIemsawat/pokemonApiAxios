@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 
-export default function Pokemons() {
-    const [pokeList, setPokeList] = useState([]);
+export default function Pokemons(props) {
+    const { pokeList, setPokeList } = props;
     const [number, setNumber] = useState(5);
 
     const handleNumber = (e) => {
@@ -21,16 +21,16 @@ export default function Pokemons() {
     return (
         <div>
             <form onSubmit={(e) => handleNumber(e)}>
-                <label>Number of Pokemons in displat</label>
+                <label>Number of Pokemons in display : </label>
                 <input
                     type="number"
                     onChange={(e) => setNumber(e.target.value)}
                     value={number}
                 />
             </form>
-            {pokeList.map((pokeRes, index) => (
+            {/* {pokeList.map((pokeRes, index) => (
                 <p key={index}>{`Number : ${index + 1} - ${pokeRes.name}`}</p>
-            ))}
+            ))} */}
         </div>
     );
 }
